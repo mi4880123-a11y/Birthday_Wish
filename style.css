@@ -1,0 +1,48 @@
+body{
+  margin:0; padding:0; height:100vh;
+  font-family:'Quicksand', sans-serif;
+  background: radial-gradient(circle at top, #2a1b4a, #0b0616);
+  overflow:hidden; color:#f4c7d9;
+  display:flex; justify-content:center; align-items:center;
+  flex-direction:column; text-align:center;
+  transition: background 2s ease;
+}
+
+#app{ width:100%; max-width:400px; text-align:center; padding:20px; position:relative; z-index:1; }
+
+button{
+  padding:20px 40px; font-size:18px; border:none; border-radius:25px;
+  cursor:pointer; background: linear-gradient(135deg,#cdb4ff,#ffd6ff);
+  color:#7a4bd9; box-shadow:0 0 25px rgba(199,160,255,.7);
+  position:relative;
+}
+button::before{
+  content:"✨"; position:absolute; top:-10px; left:50%; font-size:14px;
+  animation:twinkle 1.2s infinite alternate; transform:translateX(-50%);
+}
+@keyframes twinkle{
+  0%{opacity:0.6; transform:translateX(-50%) translateY(0);}
+  50%{opacity:1; transform:translateX(-50%) translateY(-5px);}
+  100%{opacity:0.6; transform:translateX(-50%) translateY(0);}
+}
+
+/* Title */
+h1{ font-family: 'Great Vibes', cursive; color:#e7b6ff; text-shadow:0 0 18px rgba(231,182,255,.6); margin-bottom:20px; }
+/* Cake */
+.cake{ font-size:64px; margin:20px 0; display:inline-block; }
+/* Letter */
+.letter{ font-family: 'Quicksand', sans-serif; font-size:16px; line-height:1.8; padding:0 20px; text-align:left; max-width:400px; margin:0 auto; color:#f4c7d9; }
+/* Final message */
+.final{ font-family:'Dancing Script', cursive; font-size:18px; color:#ffd1ff; margin-top:20px; text-align:center; opacity:0; }
+
+/* Balloons */
+.balloon{ position:absolute; bottom:-100px; width:40px; height:60px; border-radius:20px; opacity:0.9; animation:floatUp linear infinite;}
+@keyframes floatUp{0%{transform: translateY(0);} 100%{transform: translateY(-120vh);}}
+
+/* Stars */
+.star{ position:absolute; width:3px; height:3px; background:#fff; border-radius:50%; opacity:0.8; animation:twinkleStar linear infinite alternate; }
+@keyframes twinkleStar{0%{opacity:0.3; transform: scale(1);} 50%{opacity:1; transform: scale(1.2);} 100%{opacity:0.3; transform: scale(1);}}
+
+/* Fireworks */
+.firework{ position:absolute; width:6px; height:6px; border-radius:50%; box-shadow:0 0 15px currentColor; animation:burst 1.5s ease-out forwards; }
+@keyframes burst{0%{transform: scale(0);} 50%{transform: scale(2);} 100%{transform: scale(4); opacity:0;}}
